@@ -2285,31 +2285,46 @@ z-index:1
 /* ---------- Hero ---------- */
 .pav-hero{
   position:relative;
-  min-height:760px;
-  display:flex;align-items:flex-end;
-  padding:210px 0 0;
+  min-height:780px;
+  display:flex;align-items:center;
+  padding:180px 0 96px;
   background:#20242e url("https://pavconstructionllc.com/wp-content/uploads/2026/07/new-bannernm3.jpg") center 30%/cover no-repeat;
 }
 .pav-hero::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(12,15,22,.30) 0%,rgba(12,15,22,.42) 40%,rgba(12,15,22,.86) 100%);
+  background:linear-gradient(90deg,rgba(12,15,22,.42) 0%,rgba(12,15,22,.18) 45%,rgba(12,15,22,.30) 100%);
+}
+.pav-hero-grid{
+  display:grid;grid-template-columns:1fr minmax(0,580px);
+  align-items:center;
+}
+.pav-hero-card{
+  background:rgba(255,255,255,.90);
+  border:1px solid rgba(255,255,255,.65);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-radius:var(--pav-radius);
+  padding:48px 46px;
+  box-shadow:0 30px 60px rgba(16,18,26,.28);
 }
 .pav-hero .pav-wrap{position:relative;z-index:2;width:100%;}
+.pav-hero-crumb-row{position:absolute;top:150px;left:0;right:0;z-index:2;}
 .pav-crumb{
-  font-size:14px;color:rgba(255,255,255,.75);margin:0 0 26px;letter-spacing:.02em;
+  font-size:14px;color:rgba(255,255,255,.85);margin:0;letter-spacing:.02em;
+  text-shadow:0 1px 12px rgba(0,0,0,.5);
 }
-.pav-lp .pav-crumb a{color:rgba(255,255,255,.75);}
+.pav-lp .pav-crumb a{color:rgba(255,255,255,.85);}
 .pav-lp .pav-crumb a:hover{color:#fff;}
 .pav-crumb span{margin:0 9px;opacity:.55;}
 .pav-hero h1{
-  font-size:62px;line-height:1.18;font-weight:600;color:#fff;
-  margin:0 0 22px;max-width:680px;letter-spacing:-1px;
+  font-size:40px;line-height:1.24;font-weight:600;color:var(--pav-ink);
+  margin:0 0 18px;letter-spacing:-.6px;
 }
 .pav-hero .pav-sub{
-  font-size:20px;line-height:1.7;color:rgba(255,255,255,.9);
-  max-width:720px;margin:0 0 36px;
+  font-size:17px;line-height:1.72;color:var(--pav-body);
+  margin:0 0 30px;
 }
-.pav-hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:118px;}
+.pav-hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+.pav-hero-cta .pav-btn{padding:15px 22px;font-size:15px;}
 
 /* Frosted stat bar */
 .pav-stats{
@@ -2321,7 +2336,7 @@ z-index:1
   border-radius:var(--pav-radius);
   box-shadow:0 24px 50px rgba(20,22,30,.25);
   overflow:hidden;
-  margin-top:-74px;
+  margin-top:-60px;
 }
 .pav-stat{padding:30px 34px;border-right:1px solid rgba(0,0,0,.08);}
 .pav-stat:last-child{border-right:0;}
@@ -2531,9 +2546,11 @@ z-index:1
 }
 @media (max-width:1024px){
   .pav-sec{padding:80px 0;}
-  .pav-hero{min-height:660px;padding-top:180px;}
-  .pav-hero h1{font-size:44px;max-width:100%;}
-  .pav-hero .pav-sub{font-size:18px;}
+  .pav-hero{min-height:620px;padding:250px 0 84px;}
+  .pav-hero-grid{grid-template-columns:1fr;}
+  .pav-hero-card{padding:40px 36px;}
+  .pav-hero h1{font-size:38px;}
+  .pav-hero .pav-sub{font-size:16.5px;}
   .pav-stats{grid-template-columns:repeat(2,1fr);margin-top:-60px;}
   .pav-stat{border-bottom:1px solid rgba(0,0,0,.08);}
   .pav-stat:nth-child(2n){border-right:0;}
@@ -2554,9 +2571,10 @@ z-index:1
   .pav-lp h2{font-size:32px;}
   .pav-lp h3{font-size:21px;}
   .pav-lead{font-size:17px;}
-  .pav-hero{min-height:0;padding:150px 0 0;}
-  .pav-hero h1{font-size:34px;}
-  .pav-hero-cta{margin-bottom:86px;}
+  .pav-hero{min-height:0;padding:215px 0 58px;}
+  .pav-hero-crumb-row{top:104px;}
+  .pav-hero-card{padding:30px 22px;border-radius:22px;}
+  .pav-hero h1{font-size:30px;}
   .pav-hero-cta .pav-btn{width:100%;justify-content:center;}
   .pav-stats{grid-template-columns:1fr;margin-top:-44px;}
   .pav-stat{padding:22px 26px;border-right:0;}
@@ -2644,20 +2662,29 @@ z-index:1
 
   <!-- ============ 1. HERO ============ -->
   <section class="pav-hero">
+    <div class="pav-hero-crumb-row">
+      <div class="pav-wrap">
+        <nav class="pav-crumb" aria-label="Breadcrumb">
+          <a href="https://pavconstructionllc.com/">Home</a><span>/</span><a href="https://pavconstructionllc.com/location/dennis/">Dennis</a><span>/</span>Custom Home Building
+        </nav>
+      </div>
+    </div>
     <div class="pav-wrap">
-      <nav class="pav-crumb" aria-label="Breadcrumb">
-        <a href="https://pavconstructionllc.com/">Home</a><span>/</span><a href="https://pavconstructionllc.com/location/dennis/">Dennis</a><span>/</span>Custom Home Building
-      </nav>
+      <div class="pav-hero-grid">
+      <div></div>
+      <div class="pav-hero-card">
       <h1>Custom Home Builder in Dennis, MA</h1>
       <p class="pav-sub">Building elegant, coastal-ready custom homes across East Dennis, South Dennis, West Dennis, and Dennisport, with the craftsmanship and local knowledge Cape Cod living demands.</p>
       <div class="pav-hero-cta">
         <a class="pav-btn pav-btn--primary" href="#consultation">Start Your Custom Home
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a class="pav-btn pav-btn--ghost" href="tel:+15083679733">
+        <a class="pav-btn pav-btn--outline" href="tel:+15083679733">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
           Call (508)-367-9733
         </a>
+      </div>
+      </div>
       </div>
     </div>
   </section>
