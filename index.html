@@ -3955,6 +3955,23 @@
         object-fit: cover;
         aspect-ratio: 4/3;
       }
+      /* full, uncropped photo (natural aspect ratio) */
+      .pav-split-media--full img {
+        aspect-ratio: auto;
+        height: auto;
+        object-fit: contain;
+      }
+      /* caption sits below the photo so nothing covers it */
+      .pav-split-media--full .pav-media-tag {
+        position: static;
+        max-width: none;
+        margin-top: 18px;
+        padding: 16px 20px;
+        border: 1px solid var(--pav-line);
+        box-shadow: none;
+        background: var(--pav-alt);
+        border-radius: 16px;
+      }
       .pav-media-tag {
         position: absolute;
         left: -18px;
@@ -5699,20 +5716,15 @@
               <p class="pav-eyebrow">Building in Dennis</p>
               <h2>Building Your Dream Home in Dennis, Massachusetts</h2>
               <p>
-                Dennis sits at the heart of Cape Cod, stretching from the shores
-                of Cape Cod Bay to Nantucket Sound. It is home to five distinct
-                villages, each with its own character, from the historic charm
-                of Dennis Village to the beachside energy of West Dennis and
-                Dennisport.
+                Dennis stretches from Cape Cod Bay to Nantucket Sound across
+                five distinct villages, each with its own character.
               </p>
               <p>
                 Building here isn't the same as building anywhere else. Coastal
                 exposure, salt air, older lot patterns, and Dennis's own
                 permitting process all shape how a custom home should be
-                designed and built. Pav Construction has spent 15+ years
-                building on Cape Cod, and we bring that experience to every
-                custom home we build in Dennis, from first sketch to final
-                walkthrough.
+                designed and built. We've spent 15+ years building on Cape Cod,
+                and we bring that to every home we build in Dennis.
               </p>
               <div class="pav-inline-cta">
                 <strong>Ready to talk through your Dennis property?</strong>
@@ -5729,7 +5741,7 @@
                 </a>
               </div>
             </div>
-            <div class="pav-split-media">
+            <div class="pav-split-media pav-split-media--full">
               <img
                 src="https://pavconstructionllc.com/wp-content/uploads/2026/08/Home-builder-on-Cape-Cod.png"
                 alt="Shingle-style custom home built on Cape Cod in Dennis, MA"
@@ -5756,8 +5768,83 @@
         </div>
       </section>
 
-      <!-- ============ 3. WHO IS PAV CONSTRUCTION ============ -->
+      <!-- ============ 2b. FEATURED PROJECTS ============ -->
       <section class="pav-sec pav-sec--alt">
+        <div class="pav-wrap">
+          <div class="pav-center pav-narrow" style="margin-bottom: 54px">
+            <p class="pav-eyebrow">Featured Dennis Projects</p>
+            <h2>Recent Work in Dennis &amp; the Mid-Cape</h2>
+          </div>
+          <div class="pav-grid-3">
+            <article class="pav-proj">
+              <div class="pav-proj-img">
+                <img
+                  src="https://pavconstructionllc.com/wp-content/uploads/2026/07/1-1.jpeg"
+                  alt="East Dennis shingle-style custom home at dusk"
+                />
+                <span class="pav-proj-tag">East Dennis</span>
+              </div>
+              <div class="pav-proj-body">
+                <h3>East Dennis Shingle-Style Custom Home</h3>
+                <p>
+                  A ground-up build blending classic Cape Cod exterior with an
+                  open, modern interior layout.
+                </p>
+              </div>
+            </article>
+            <article class="pav-proj">
+              <div class="pav-proj-img">
+                <img
+                  src="https://pavconstructionllc.com/wp-content/uploads/2026/07/26-web-or-mls-41-fishermans-rd.jpg"
+                  alt="West Dennis waterfront remodel"
+                />
+                <span class="pav-proj-tag">West Dennis</span>
+              </div>
+              <div class="pav-proj-body">
+                <h3>West Dennis Waterfront Remodel</h3>
+                <p>
+                  Full renovation preserving the home's original character while
+                  adding coastal-resilient materials.
+                </p>
+              </div>
+            </article>
+            <article class="pav-proj">
+              <div class="pav-proj-img">
+                <img
+                  src="https://pavconstructionllc.com/wp-content/uploads/2026/02/tabs-img3.png"
+                  alt="South Dennis home addition interior"
+                />
+                <span class="pav-proj-tag">South Dennis</span>
+              </div>
+              <div class="pav-proj-body">
+                <h3>South Dennis Addition</h3>
+                <p>
+                  A seamless addition that expanded living space without
+                  disrupting the home's historic front façade.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="pav-center" style="margin-top: 52px">
+            <a
+              class="pav-btn pav-btn--primary"
+              href="https://pavconstructionllc.com/case-studies/"
+              >View Our Full Project Gallery
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 3. WHO IS PAV CONSTRUCTION ============ -->
+      <section class="pav-sec">
         <div class="pav-wrap">
           <div class="pav-split pav-split--rev">
             <div>
@@ -5823,7 +5910,7 @@
 
 
       <!-- ============ 3b. PROJECT GALLERY ============ -->
-      <section class="pav-sec">
+      <section class="pav-sec pav-sec--alt">
         <div class="pav-wrap">
           <div class="pav-center pav-narrow">
             <p class="pav-eyebrow">Inside Our Work</p>
@@ -6273,7 +6360,7 @@
       </section>
 
       <!-- ============ 6. PROCESS ============ -->
-      <section class="pav-sec">
+      <section class="pav-sec pav-sec--alt">
         <div class="pav-wrap">
           <div class="pav-center pav-narrow">
             <p class="pav-eyebrow">Our Custom Home Building Process</p>
@@ -6356,81 +6443,6 @@
               class="pav-btn pav-btn--outline"
               href="https://pavconstructionllc.com/what-to-expect/"
               >See What to Expect
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ 7. FEATURED PROJECTS ============ -->
-      <section class="pav-sec pav-sec--alt">
-        <div class="pav-wrap">
-          <div class="pav-center pav-narrow" style="margin-bottom: 54px">
-            <p class="pav-eyebrow">Featured Dennis Projects</p>
-            <h2>Recent Work in Dennis &amp; the Mid-Cape</h2>
-          </div>
-          <div class="pav-grid-3">
-            <article class="pav-proj">
-              <div class="pav-proj-img">
-                <img
-                  src="https://pavconstructionllc.com/wp-content/uploads/2026/07/1-1.jpeg"
-                  alt="East Dennis shingle-style custom home at dusk"
-                />
-                <span class="pav-proj-tag">East Dennis</span>
-              </div>
-              <div class="pav-proj-body">
-                <h3>East Dennis Shingle-Style Custom Home</h3>
-                <p>
-                  A ground-up build blending classic Cape Cod exterior with an
-                  open, modern interior layout.
-                </p>
-              </div>
-            </article>
-            <article class="pav-proj">
-              <div class="pav-proj-img">
-                <img
-                  src="https://pavconstructionllc.com/wp-content/uploads/2026/07/26-web-or-mls-41-fishermans-rd.jpg"
-                  alt="West Dennis waterfront remodel"
-                />
-                <span class="pav-proj-tag">West Dennis</span>
-              </div>
-              <div class="pav-proj-body">
-                <h3>West Dennis Waterfront Remodel</h3>
-                <p>
-                  Full renovation preserving the home's original character while
-                  adding coastal-resilient materials.
-                </p>
-              </div>
-            </article>
-            <article class="pav-proj">
-              <div class="pav-proj-img">
-                <img
-                  src="https://pavconstructionllc.com/wp-content/uploads/2026/02/tabs-img3.png"
-                  alt="South Dennis home addition interior"
-                />
-                <span class="pav-proj-tag">South Dennis</span>
-              </div>
-              <div class="pav-proj-body">
-                <h3>South Dennis Addition</h3>
-                <p>
-                  A seamless addition that expanded living space without
-                  disrupting the home's historic front façade.
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="pav-center" style="margin-top: 52px">
-            <a
-              class="pav-btn pav-btn--primary"
-              href="https://pavconstructionllc.com/case-studies/"
-              >View Our Full Project Gallery
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
