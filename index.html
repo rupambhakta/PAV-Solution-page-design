@@ -3729,67 +3729,108 @@
         min-height: 100vh;
         display: flex;
         align-items: center;
-        padding: calc(var(--pav-navh) + 30px) 0 46px;
-        background: #20242e
-          url("https://pavconstructionllc.com/wp-content/uploads/2026/07/new-bannernm3.jpg")
-          center 30% / cover no-repeat;
+        padding: calc(var(--pav-navh) + 26px) 0 92px;
+        background: linear-gradient(180deg, #faf9f8 0%, #efedeb 100%);
+        overflow: hidden;
       }
-      .pav-hero::after {
+      .pav-hero::before {
         content: "";
         position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          90deg,
-          rgba(12, 15, 22, 0.42) 0%,
-          rgba(12, 15, 22, 0.18) 45%,
-          rgba(12, 15, 22, 0.3) 100%
+        top: -190px;
+        right: -160px;
+        width: 560px;
+        height: 560px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(162, 0, 1, 0.08),
+          rgba(162, 0, 1, 0) 70%
         );
-      }
-      .pav-hero-grid {
-        display: grid;
-        grid-template-columns: 1fr minmax(0, 580px);
-        align-items: center;
-      }
-      .pav-hero-card {
-        background: rgba(255, 255, 255, 0.9);
-        border: 1px solid rgba(255, 255, 255, 0.65);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-radius: var(--pav-radius);
-        padding: 38px 40px;
-        box-shadow: 0 30px 60px rgba(16, 18, 26, 0.28);
       }
       .pav-hero .pav-wrap {
         position: relative;
         z-index: 2;
         width: 100%;
       }
-      .pav-hero-crumb-row {
+      .pav-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 530px);
+        gap: 46px;
+        align-items: center;
+      }
+      /* left column: the photo block */
+      .pav-hero-media {
+        position: relative;
+      }
+      .pav-hero-media-main {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: var(--pav-radius);
+        box-shadow: 0 30px 62px rgba(16, 18, 26, 0.22);
+      }
+      .pav-hero-media-sm {
         position: absolute;
-        top: calc(var(--pav-navh) + 24px);
-        left: 0;
-        right: 0;
-        z-index: 2;
+        right: -30px;
+        bottom: -38px;
+        width: 208px;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 20px;
+        border: 6px solid #fff;
+        box-shadow: 0 20px 40px rgba(16, 18, 26, 0.2);
+      }
+      .pav-hero-badge {
+        position: absolute;
+        left: -20px;
+        bottom: 34px;
+        background: #fff;
+        border-radius: 18px;
+        padding: 16px 22px;
+        box-shadow: 0 18px 38px rgba(20, 22, 30, 0.16);
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        max-width: 268px;
+      }
+      .pav-hero-badge svg {
+        width: 25px;
+        height: 25px;
+        color: var(--pav-red);
+        flex: none;
+      }
+      .pav-hero-badge span {
+        font-size: 14.5px;
+        line-height: 1.45;
+        font-weight: 500;
+        color: var(--pav-ink);
+      }
+      .pav-hero-card {
+        background: #fff;
+        border: 1px solid var(--pav-line);
+        border-radius: var(--pav-radius);
+        padding: 34px 32px;
+        box-shadow: 0 26px 56px rgba(16, 18, 26, 0.13);
       }
       .pav-crumb {
         font-size: 14px;
-        color: rgba(255, 255, 255, 0.85);
-        margin: 0;
+        color: var(--pav-muted);
+        margin: 0 0 24px;
         letter-spacing: 0.02em;
-        text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
       }
       .pav-lp .pav-crumb a {
-        color: rgba(255, 255, 255, 0.85);
+        color: var(--pav-muted);
       }
       .pav-lp .pav-crumb a:hover {
-        color: #fff;
+        color: var(--pav-red);
       }
       .pav-crumb span {
         margin: 0 9px;
         opacity: 0.55;
       }
       .pav-hero h1 {
-        font-size: 38px;
+        font-size: 37px;
         line-height: 1.22;
         font-weight: 600;
         color: var(--pav-ink);
@@ -3837,7 +3878,7 @@
         padding: 13px 16px;
         font-size: 15px;
         border-radius: 12px;
-        background: rgba(255, 255, 255, 0.92);
+        background: #fdfcfc;
         border-color: #e0d8d8;
       }
       .pav-hero-card .pav-field input:focus {
@@ -3845,27 +3886,28 @@
       }
       .pav-hero-form .pav-hero-cta {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         gap: 16px;
         margin-top: 18px;
       }
       .pav-hero-form .pav-hero-cta .pav-btn {
         width: 100%;
         justify-content: center;
+        padding: 14px 12px;
+        font-size: 14.5px;
+        white-space: nowrap;
       }
 
       /* Frosted stat bar */
       .pav-stats {
         position: relative;
-        z-index: 2;
+        z-index: 3;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        background: rgba(255, 255, 255, 0.86);
-        border: 1px solid rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
+        background: #fff;
+        border: 1px solid var(--pav-line);
         border-radius: var(--pav-radius);
-        box-shadow: 0 24px 50px rgba(20, 22, 30, 0.25);
+        box-shadow: 0 24px 50px rgba(20, 22, 30, 0.12);
         overflow: hidden;
         margin-top: -60px;
       }
@@ -3970,6 +4012,154 @@
         color: var(--pav-ink);
       }
 
+      /* ---------- Photo gallery ---------- */
+      .pav-gal {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 200px;
+        gap: 16px;
+        margin-top: 54px;
+      }
+      .pav-gal figure {
+        position: relative;
+        margin: 0;
+        overflow: hidden;
+        border-radius: 18px;
+        background: #e8e6e4;
+      }
+      .pav-gal img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.7s ease;
+      }
+      .pav-gal figure:hover img {
+        transform: scale(1.07);
+      }
+      .pav-gal figure::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(12, 15, 22, 0) 45%,
+          rgba(12, 15, 22, 0.72) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.35s ease;
+      }
+      .pav-gal figure:hover::after {
+        opacity: 1;
+      }
+      .pav-gal figcaption {
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 16px;
+        z-index: 2;
+        color: #fff;
+        font-size: 14.5px;
+        line-height: 1.4;
+        font-weight: 500;
+        opacity: 0;
+        transform: translateY(8px);
+        transition:
+          opacity 0.35s ease,
+          transform 0.35s ease;
+      }
+      .pav-gal figure:hover figcaption {
+        opacity: 1;
+        transform: none;
+      }
+      @media (min-width: 1025px) {
+        .pav-gal .g1 {
+          grid-column: 1 / 3;
+          grid-row: 1 / 3;
+        }
+        .pav-gal .g2 {
+          grid-column: 3;
+          grid-row: 1;
+        }
+        .pav-gal .g3 {
+          grid-column: 4;
+          grid-row: 1;
+        }
+        .pav-gal .g4 {
+          grid-column: 3 / 5;
+          grid-row: 2;
+        }
+        .pav-gal .g5 {
+          grid-column: 1;
+          grid-row: 3;
+        }
+        .pav-gal .g6 {
+          grid-column: 2;
+          grid-row: 3;
+        }
+        .pav-gal .g7 {
+          grid-column: 3 / 5;
+          grid-row: 3 / 5;
+        }
+        .pav-gal .g8 {
+          grid-column: 1 / 3;
+          grid-row: 4;
+        }
+        .pav-gal .g9 {
+          grid-column: 1 / 3;
+          grid-row: 5;
+        }
+        .pav-gal .g10 {
+          grid-column: 3;
+          grid-row: 5 / 7;
+        }
+        .pav-gal .g11 {
+          grid-column: 4;
+          grid-row: 5 / 7;
+        }
+        .pav-gal .g12 {
+          grid-column: 1 / 3;
+          grid-row: 6;
+        }
+      }
+
+      /* ---------- Full-bleed image band ---------- */
+      .pav-band {
+        position: relative;
+        padding: 108px 0;
+        background: #20242e center / cover no-repeat;
+      }
+      .pav-band::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(12, 15, 22, 0.86) 0%,
+          rgba(12, 15, 22, 0.66) 60%,
+          rgba(12, 15, 22, 0.5) 100%
+        );
+      }
+      .pav-band .pav-wrap {
+        position: relative;
+        z-index: 2;
+      }
+      .pav-band-inner {
+        max-width: 720px;
+      }
+      .pav-band .pav-eyebrow {
+        color: #ff6b6d;
+      }
+      .pav-lp .pav-band h2 {
+        color: #fff;
+      }
+      .pav-band p {
+        color: rgba(231, 235, 243, 0.86);
+        font-size: 18px;
+        line-height: 1.75;
+        margin: 0 0 32px;
+      }
+
       /* ---------- Why-choose cards ---------- */
       .pav-grid-3 {
         display: grid;
@@ -4034,10 +4224,26 @@
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 20px;
-        padding: 32px 32px 30px;
+        overflow: hidden;
         transition:
           background 0.3s ease,
           border-color 0.3s ease;
+      }
+      .pav-perm-thumb {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 8;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+      .pav-perm-item:hover .pav-perm-thumb {
+        transform: scale(1.05);
+      }
+      .pav-perm-figure {
+        overflow: hidden;
+      }
+      .pav-perm-text {
+        padding: 28px 32px 30px;
       }
       .pav-perm-item:hover {
         background: rgba(255, 255, 255, 0.09);
@@ -4081,6 +4287,7 @@
       }
       .pav-steps::before {
         content: "";
+        display: none;
         position: absolute;
         top: 31px;
         left: 8%;
@@ -4097,12 +4304,26 @@
         text-align: center;
         padding: 0 6px;
       }
+      .pav-step-img {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 18px;
+        margin-bottom: 18px;
+        box-shadow: 0 16px 32px rgba(20, 22, 30, 0.12);
+        transition: transform 0.5s ease;
+      }
+      .pav-step:hover .pav-step-img {
+        transform: translateY(-6px);
+      }
       .pav-step-num {
         position: relative;
         z-index: 2;
         width: 62px;
         height: 62px;
-        margin: 0 auto 22px;
+        margin: -50px auto 18px;
         border-radius: 50%;
         background: #fff;
         border: 1px solid var(--pav-line);
@@ -4242,29 +4463,37 @@
         gap: 30px;
         margin-top: 54px;
       }
+      .pav-quote-img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        display: block;
+      }
       .pav-quote {
         background: #fff;
         border: 1px solid var(--pav-line);
         border-radius: 24px;
-        padding: 44px 42px;
+        overflow: hidden;
+        padding: 0 0 44px;
         position: relative;
       }
       .pav-quote-mark {
         font-family: Georgia, serif;
         font-size: 70px;
         line-height: 1;
-        color: rgba(162, 0, 1, 0.16);
+        color: rgba(162, 0, 1, 0.18);
         position: absolute;
-        top: 24px;
+        bottom: 18px;
         right: 34px;
       }
-      .pav-quote p {
+      .pav-lp .pav-quote p {
         font-size: 17.5px;
         line-height: 1.8;
         color: var(--pav-ink);
-        margin: 0 0 26px;
+        margin: 34px 42px 26px;
       }
       .pav-quote cite {
+        margin: 0 42px;
         font-style: normal;
         font-weight: 600;
         color: var(--pav-ink);
@@ -4346,31 +4575,54 @@
 
       /* ---------- Areas ---------- */
       .pav-villages {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 14px;
-        margin-top: 34px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 18px;
+        margin-top: 44px;
       }
       .pav-lp .pav-village {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        min-height: 210px;
+        border-radius: 20px;
+        overflow: hidden;
+        color: #fff;
         font-size: 17px;
         font-weight: 500;
-        color: var(--pav-ink);
-        padding: 14px 28px;
-        border-radius: 999px;
-        background: #fff;
-        border: 1px solid var(--pav-line);
-        transition:
-          background 0.25s ease,
-          color 0.25s ease,
-          border-color 0.25s ease,
-          transform 0.25s ease;
+        text-align: center;
+        transition: transform 0.35s ease;
+      }
+      .pav-lp .pav-village img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+      .pav-lp .pav-village::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(12, 15, 22, 0.05) 30%,
+          rgba(12, 15, 22, 0.82) 100%
+        );
+      }
+      .pav-lp .pav-village span {
+        position: relative;
+        z-index: 2;
+        padding: 0 12px 22px;
       }
       .pav-lp .pav-village:hover {
-        background: var(--pav-red);
-        border-color: var(--pav-red);
+        transform: translateY(-5px);
         color: #fff;
-        transform: translateY(-3px);
+      }
+      .pav-lp .pav-village:hover img {
+        transform: scale(1.07);
       }
 
       /* ---------- Final CTA + form ---------- */
@@ -4499,7 +4751,7 @@
       }
 
       /* short laptop screens: keep the hero inside one screen */
-      @media (min-width: 1025px) and (max-height: 760px) {
+      @media (min-width: 1025px) and (max-height: 820px) {
         .pav-hero {
           padding: calc(var(--pav-navh) + 18px) 0 26px;
         }
@@ -4527,8 +4779,14 @@
         .pav-hero-form .pav-hero-cta {
           margin-top: 14px;
         }
-        .pav-hero-crumb-row {
-          top: calc(var(--pav-navh) + 14px);
+        .pav-crumb {
+          margin-bottom: 16px;
+        }
+        .pav-hero-media-main {
+          aspect-ratio: 16 / 10;
+        }
+        .pav-hero {
+          padding-bottom: 74px;
         }
       }
 
@@ -4552,11 +4810,20 @@
           --pav-navh: 104px;
         }
         .pav-hero {
-          min-height: 100vh;
-          padding: calc(var(--pav-navh) + 120px) 0 60px;
+          min-height: 0;
+          padding: calc(var(--pav-navh) + 34px) 0 84px;
         }
         .pav-hero-grid {
           grid-template-columns: 1fr;
+          gap: 54px;
+        }
+        .pav-hero-media-sm {
+          right: 16px;
+          bottom: -30px;
+          width: 170px;
+        }
+        .pav-hero-badge {
+          left: 14px;
         }
         .pav-hero-card {
           padding: 40px 36px;
@@ -4592,6 +4859,20 @@
         }
         .pav-grid-3 {
           grid-template-columns: repeat(2, 1fr);
+        }
+        .pav-gal {
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: 190px;
+        }
+        .pav-gal .g1,
+        .pav-gal .g7 {
+          grid-row: span 2;
+        }
+        .pav-band {
+          padding: 84px 0;
+        }
+        .pav-villages {
+          grid-template-columns: repeat(3, 1fr);
         }
         .pav-steps {
           grid-template-columns: repeat(2, 1fr);
@@ -4632,10 +4913,25 @@
         }
         .pav-hero {
           min-height: 0;
-          padding: calc(var(--pav-navh) + 128px) 0 58px;
+          padding: calc(var(--pav-navh) + 24px) 0 70px;
         }
-        .pav-hero-crumb-row {
-          top: 104px;
+        .pav-hero-media-main {
+          aspect-ratio: 3 / 2;
+        }
+        .pav-hero-media-sm {
+          width: 128px;
+          right: 12px;
+          bottom: -24px;
+          border-width: 4px;
+        }
+        .pav-hero-badge {
+          left: 12px;
+          bottom: 16px;
+          padding: 12px 16px;
+          max-width: 210px;
+        }
+        .pav-hero-badge span {
+          font-size: 13.5px;
         }
         .pav-hero-card {
           padding: 30px 22px;
@@ -4681,14 +4977,38 @@
         .pav-steps {
           grid-template-columns: 1fr;
         }
+        .pav-gal {
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: 132px;
+          gap: 12px;
+        }
+        .pav-villages {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+        .pav-lp .pav-village {
+          min-height: 150px;
+        }
+        .pav-band {
+          padding: 66px 0;
+        }
+        .pav-band p {
+          font-size: 16.5px;
+        }
+        .pav-lp .pav-quote p {
+          margin: 28px 26px 22px;
+        }
+        .pav-quote cite {
+          margin: 0 26px;
+        }
+        .pav-perm-text {
+          padding: 24px 22px 26px;
+        }
         .pav-media-tag {
           left: 12px;
           right: 12px;
           bottom: 14px;
           max-width: none;
-        }
-        .pav-quote {
-          padding: 32px 26px;
         }
         .pav-form {
           padding: 30px 22px;
@@ -5250,19 +5570,39 @@
     <main>
       <!-- ============ 1. HERO ============ -->
       <section class="pav-hero">
-        <div class="pav-hero-crumb-row">
-          <div class="pav-wrap">
-            <nav class="pav-crumb" aria-label="Breadcrumb">
-              <a href="https://pavconstructionllc.com/">Home</a><span>/</span
-              ><a href="https://pavconstructionllc.com/location/dennis/"
-                >Dennis</a
-              ><span>/</span>Custom Home Building
-            </nav>
-          </div>
-        </div>
         <div class="pav-wrap">
+          <nav class="pav-crumb" aria-label="Breadcrumb">
+            <a href="https://pavconstructionllc.com/">Home</a><span>/</span
+            ><a href="https://pavconstructionllc.com/location/dennis/">Dennis</a
+            ><span>/</span>Custom Home Building
+          </nav>
           <div class="pav-hero-grid">
-            <div></div>
+            <div class="pav-hero-media">
+              <img
+                class="pav-hero-media-main"
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/08/custom-home-builder-Cape-Cod.jpg"
+                alt="Custom shingle-style home built by Pav Construction in Dennis, MA"
+              />
+              <img
+                class="pav-hero-media-sm"
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/27-web-or-mls-1-bayberry-rd.jpg"
+                alt="Vaulted coastal living room inside a Pav Construction custom home"
+              />
+              <div class="pav-hero-badge">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                >
+                  <path
+                    d="M12 21s-7-5.6-7-10.6A7 7 0 0 1 19 10.4C19 15.4 12 21 12 21Z"
+                  />
+                  <circle cx="12" cy="10.2" r="2.6" />
+                </svg>
+                <span>Building across all five Dennis villages.</span>
+              </div>
+            </div>
             <div class="pav-hero-card">
               <h1>Custom Home Builder in Dennis, MA</h1>
               <p class="pav-sub">
@@ -5481,6 +5821,135 @@
         </div>
       </section>
 
+
+      <!-- ============ 3b. PROJECT GALLERY ============ -->
+      <section class="pav-sec">
+        <div class="pav-wrap">
+          <div class="pav-center pav-narrow">
+            <p class="pav-eyebrow">Inside Our Work</p>
+            <h2>From Foundation to Finish Work</h2>
+            <p class="pav-lead">
+              A look at real Pav Construction builds on Cape Cod, from framing
+              and site work through the cabinetry, tile, and trim details that
+              make a house feel finished.
+            </p>
+          </div>
+          <div class="pav-gal">
+            <figure class="g1">
+              <img
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/02/tabs-img4.png"
+                alt="Open living space with exposed beams"
+                loading="lazy"
+              />
+              <figcaption>Open living space with exposed beams</figcaption>
+            </figure>
+            <figure class="g2">
+              <img
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/02/about-img3.png"
+                alt="Custom stair and millwork detail"
+                loading="lazy"
+              />
+              <figcaption>Custom stair and millwork detail</figcaption>
+            </figure>
+            <figure class="g3">
+              <img
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/46-web-or-mls-1-bayberry-rd.jpg"
+                alt="Primary bath with soaking tub"
+                loading="lazy"
+              />
+              <figcaption>Primary bath with soaking tub</figcaption>
+            </figure>
+            <figure class="g4">
+              <img
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/13-web-or-mls-1-bayberry-rd.jpg"
+                alt="Shiplap mudroom built-ins"
+                loading="lazy"
+              />
+              <figcaption>Shiplap mudroom built-ins</figcaption>
+            </figure>
+            <figure class="g5">
+              <img
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/02/product3.png"
+                alt="Island seating and custom cabinetry"
+                loading="lazy"
+              />
+              <figcaption>Island seating and custom cabinetry</figcaption>
+            </figure>
+            <figure class="g6">
+              <img
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/50-web-or-mls-1-bayberry-rd.jpg"
+                alt="Guest bath vanity detail"
+                loading="lazy"
+              />
+              <figcaption>Guest bath vanity detail</figcaption>
+            </figure>
+            <figure class="g7">
+              <img
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/74-web-or-mls-1-bayberry-rd.jpg"
+                alt="Bluestone terrace and plantings"
+                loading="lazy"
+              />
+              <figcaption>Bluestone terrace and plantings</figcaption>
+            </figure>
+            <figure class="g8">
+              <img
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/84-web-or-mls-1-bayberry-rd.jpg"
+                alt="Rear elevation and patio"
+                loading="lazy"
+              />
+              <figcaption>Rear elevation and patio</figcaption>
+            </figure>
+            <figure class="g9">
+              <img
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/42-web-or-mls-1-bayberry-rd.jpg"
+                alt="Custom kitchen cabinetry"
+                loading="lazy"
+              />
+              <figcaption>Custom kitchen cabinetry</figcaption>
+            </figure>
+            <figure class="g10">
+              <img
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/02/expect-img1.png"
+                alt="Entry and interior finish work"
+                loading="lazy"
+              />
+              <figcaption>Entry and interior finish work</figcaption>
+            </figure>
+            <figure class="g11">
+              <img
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/02/tabs-img6.png"
+                alt="Kitchen and dining, indoor-outdoor flow"
+                loading="lazy"
+              />
+              <figcaption>Kitchen and dining, indoor-outdoor flow</figcaption>
+            </figure>
+            <figure class="g12">
+              <img
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/65-web-or-mls-1-bayberry-rd-1.jpg"
+                alt="Finished home, ready for handover"
+                loading="lazy"
+              />
+              <figcaption>Finished home, ready for handover</figcaption>
+            </figure>
+          </div>
+          <div class="pav-center" style="margin-top: 46px">
+            <a
+              class="pav-btn pav-btn--outline"
+              href="https://pavconstructionllc.com/case-studies/"
+              >See More of Our Work
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <!-- ============ 4. WHY CHOOSE PAV ============ -->
       <section class="pav-sec">
         <div class="pav-wrap">
@@ -5630,7 +6099,25 @@
               </p>
             </div>
           </div>
-          <div class="pav-center" style="margin-top: 52px">
+        </div>
+      </section>
+
+      <!-- ============ 4b. IMAGE BAND CTA ============ -->
+      <section
+        class="pav-band"
+        style="
+          background-image: url('https://pavconstructionllc.com/wp-content/uploads/2026/04/about-banner-3.jpg');
+        "
+      >
+        <div class="pav-wrap">
+          <div class="pav-band-inner">
+            <p class="pav-eyebrow">Free Estimate</p>
+            <h2>Let's Price Your Dennis Build</h2>
+            <p>
+              Transparent, itemized pricing from a builder who lives where you
+              want to build. Tell us about your lot and we'll walk you through
+              what it takes.
+            </p>
             <a
               class="pav-btn pav-btn--primary"
               href="https://pavconstructionllc.com/contact-us/"
@@ -5662,75 +6149,119 @@
           </div>
           <div class="pav-perm">
             <div class="pav-perm-item">
-              <h3>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.7"
-                >
-                  <path
-                    d="M2 16.5c2-1.6 3.3-1.6 5.3 0s3.4 1.6 5.4 0 3.3-1.6 5.3 0 1.9 1.3 4 0M2 11c2-1.6 3.3-1.6 5.3 0s3.4 1.6 5.4 0 3.3-1.6 5.3 0 1.9 1.3 4 0"
-                  /></svg
-                >Coastal &amp; wetlands review
-              </h3>
-              <p>
-                Properties near Sesuit Harbor, Bass River, or the bayside
-                marshes often require Conservation Commission review before
-                construction can begin.
-              </p>
+              <figure class="pav-perm-figure">
+                <img
+                  class="pav-perm-thumb"
+                  src="https://pavconstructionllc.com/wp-content/uploads/2026/07/1productn8.jpg"
+                  alt="Waterfront custom home near a Cape Cod marsh"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="pav-perm-text">
+
+                <h3>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                  >
+                    <path
+                      d="M2 16.5c2-1.6 3.3-1.6 5.3 0s3.4 1.6 5.4 0 3.3-1.6 5.3 0 1.9 1.3 4 0M2 11c2-1.6 3.3-1.6 5.3 0s3.4 1.6 5.4 0 3.3-1.6 5.3 0 1.9 1.3 4 0"
+                    /></svg
+                  >Coastal &amp; wetlands review
+                </h3>
+                <p>
+                  Properties near Sesuit Harbor, Bass River, or the bayside
+                  marshes often require Conservation Commission review before
+                  construction can begin.
+                </p>
+              </div>
             </div>
             <div class="pav-perm-item">
-              <h3>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.7"
-                >
-                  <path d="M3 21h18M5 21V10l7-6 7 6v11M10 21v-5h4v5" /></svg
-                >Historic districts
-              </h3>
-              <p>
-                Homes along Route 6A or in designated historic areas may need
-                design approval to preserve the look of the neighborhood.
-              </p>
+              <figure class="pav-perm-figure">
+                <img
+                  class="pav-perm-thumb"
+                  src="https://pavconstructionllc.com/wp-content/uploads/2026/04/service-img3.jpg"
+                  alt="Traditional New England home along a Dennis historic corridor"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="pav-perm-text">
+
+                <h3>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                  >
+                    <path d="M3 21h18M5 21V10l7-6 7 6v11M10 21v-5h4v5" /></svg
+                  >Historic districts
+                </h3>
+                <p>
+                  Homes along Route 6A or in designated historic areas may need
+                  design approval to preserve the look of the neighborhood.
+                </p>
+              </div>
             </div>
             <div class="pav-perm-item">
-              <h3>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.7"
-                >
-                  <path
-                    d="M12 3s5.5 6 5.5 9.6A5.5 5.5 0 0 1 6.5 12.6C6.5 9 12 3 12 3Z"
-                  /></svg
-                >Septic &amp; Title 5
-              </h3>
-              <p>
-                Older lots frequently require septic system upgrades when adding
-                bedrooms or expanding square footage.
-              </p>
+              <figure class="pav-perm-figure">
+                <img
+                  class="pav-perm-thumb"
+                  src="https://pavconstructionllc.com/wp-content/uploads/2026/07/landing-img1-2.png"
+                  alt="Site work and excavation on a Cape Cod lot"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="pav-perm-text">
+
+                <h3>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                  >
+                    <path
+                      d="M12 3s5.5 6 5.5 9.6A5.5 5.5 0 0 1 6.5 12.6C6.5 9 12 3 12 3Z"
+                    /></svg
+                  >Septic &amp; Title 5
+                </h3>
+                <p>
+                  Older lots frequently require septic system upgrades when adding
+                  bedrooms or expanding square footage.
+                </p>
+              </div>
             </div>
             <div class="pav-perm-item">
-              <h3>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.7"
-                >
-                  <path
-                    d="M12 2v6M9 5l3-3 3 3M3 15c2-1.5 3.3-1.5 5.3 0s3.4 1.5 5.4 0 3.3-1.5 5.3 0M3 20c2-1.5 3.3-1.5 5.3 0s3.4 1.5 5.4 0 3.3-1.5 5.3 0"
-                  /></svg
-                >Coastal flood zones
-              </h3>
-              <p>
-                Bay-front and sound-front lots come with additional building
-                code and elevation considerations.
-              </p>
+              <figure class="pav-perm-figure">
+                <img
+                  class="pav-perm-thumb"
+                  src="https://pavconstructionllc.com/wp-content/uploads/2026/07/productn5.jpg"
+                  alt="Elevated coastal home built for flood-zone requirements"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="pav-perm-text">
+
+                <h3>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                  >
+                    <path
+                      d="M12 2v6M9 5l3-3 3 3M3 15c2-1.5 3.3-1.5 5.3 0s3.4 1.5 5.4 0 3.3-1.5 5.3 0M3 20c2-1.5 3.3-1.5 5.3 0s3.4 1.5 5.4 0 3.3-1.5 5.3 0"
+                    /></svg
+                  >Coastal flood zones
+                </h3>
+                <p>
+                  Bay-front and sound-front lots come with additional building
+                  code and elevation considerations.
+                </p>
+              </div>
             </div>
           </div>
           <p class="pav-perm-note">
@@ -5750,6 +6281,12 @@
           </div>
           <div class="pav-steps">
             <div class="pav-step">
+              <img
+                class="pav-step-img"
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/pav.jpg"
+                alt="Pav, owner of Pav Construction, on site in Cape Cod"
+                loading="lazy"
+              />
               <div class="pav-step-num">01</div>
               <h3>Consultation</h3>
               <p>
@@ -5758,6 +6295,12 @@
               </p>
             </div>
             <div class="pav-step">
+              <img
+                class="pav-step-img"
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/02/expect-img3.png"
+                alt="Interior design detail in a custom Cape Cod home"
+                loading="lazy"
+              />
               <div class="pav-step-num">02</div>
               <h3>Design</h3>
               <p>
@@ -5766,6 +6309,12 @@
               </p>
             </div>
             <div class="pav-step">
+              <img
+                class="pav-step-img"
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/2.jpeg"
+                alt="Custom home on a Dennis lot after permitting"
+                loading="lazy"
+              />
               <div class="pav-step-num">03</div>
               <h3>Permitting</h3>
               <p>
@@ -5774,6 +6323,12 @@
               </p>
             </div>
             <div class="pav-step">
+              <img
+                class="pav-step-img"
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/image1-1.jpg"
+                alt="Framing underway on a Cape Cod custom home"
+                loading="lazy"
+              />
               <div class="pav-step-num">04</div>
               <h3>Construction</h3>
               <p>
@@ -5782,6 +6337,12 @@
               </p>
             </div>
             <div class="pav-step">
+              <img
+                class="pav-step-img"
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/08/Custom-home-on-Cape-Cod.png"
+                alt="Completed custom home ready for final walkthrough"
+                loading="lazy"
+              />
               <div class="pav-step-num">05</div>
               <h3>Final Walkthrough</h3>
               <p>
@@ -5819,8 +6380,8 @@
             <article class="pav-proj">
               <div class="pav-proj-img">
                 <img
-                  src="https://pavconstructionllc.com/wp-content/uploads/2026/08/custom-home-builder-Cape-Cod.jpg"
-                  alt="East Dennis shingle-style custom home"
+                  src="https://pavconstructionllc.com/wp-content/uploads/2026/07/1-1.jpeg"
+                  alt="East Dennis shingle-style custom home at dusk"
                 />
                 <span class="pav-proj-tag">East Dennis</span>
               </div>
@@ -5851,8 +6412,8 @@
             <article class="pav-proj">
               <div class="pav-proj-img">
                 <img
-                  src="https://pavconstructionllc.com/wp-content/uploads/2026/07/productn5.jpg"
-                  alt="South Dennis home addition"
+                  src="https://pavconstructionllc.com/wp-content/uploads/2026/02/tabs-img3.png"
+                  alt="South Dennis home addition interior"
                 />
                 <span class="pav-proj-tag">South Dennis</span>
               </div>
@@ -5915,7 +6476,7 @@
             </div>
             <div class="pav-style">
               <img
-                src="https://pavconstructionllc.com/wp-content/uploads/2026/04/service-img3.jpg"
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/02/product1.png"
                 alt="Colonial revival home on Cape Cod"
               />
               <div class="pav-style-body">
@@ -5925,8 +6486,8 @@
             </div>
             <div class="pav-style">
               <img
-                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/1productn8.jpg"
-                alt="Contemporary transitional Cape Cod home"
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/02/tabs-img2.png"
+                alt="Contemporary transitional Cape Cod home with pool"
               />
               <div class="pav-style-body">
                 <h3>Contemporary &amp; Transitional</h3>
@@ -5949,6 +6510,12 @@
           </div>
           <div class="pav-quotes">
             <blockquote class="pav-quote">
+              <img
+                class="pav-quote-img"
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/mobl.jpg"
+                alt="Custom home rebuilt from the ground up by Pav Construction"
+                loading="lazy"
+              />
               <span class="pav-quote-mark">&rdquo;</span>
               <p>
                 Pav tore down the old house, preserving then adding to the
@@ -5960,6 +6527,12 @@
               <cite>Jeffery Weilburg</cite>
             </blockquote>
             <blockquote class="pav-quote">
+              <img
+                class="pav-quote-img"
+                src="https://pavconstructionllc.com/wp-content/uploads/2026/07/79-web-or-mls-1-bayberry-rd1.jpg"
+                alt="Finished outdoor living space on a Pav Construction project"
+                loading="lazy"
+              />
               <span class="pav-quote-mark">&rdquo;</span>
               <p>
                 Pav rebuilt our home from the ground up and came in on budget
@@ -6054,11 +6627,26 @@
           </p>
           <h2>Serving All of Dennis</h2>
           <div class="pav-villages">
-            <a class="pav-village" href="#consultation">East Dennis</a>
-            <a class="pav-village" href="#consultation">South Dennis</a>
-            <a class="pav-village" href="#consultation">West Dennis</a>
-            <a class="pav-village" href="#consultation">North Dennis</a>
-            <a class="pav-village" href="#consultation">Dennisport</a>
+            <a class="pav-village" href="#consultation">
+              <img src="https://pavconstructionllc.com/wp-content/uploads/2026/04/IMG_2048.jpeg" alt="Custom home in East Dennis, MA" loading="lazy" />
+              <span>East Dennis</span>
+            </a>
+            <a class="pav-village" href="#consultation">
+              <img src="https://pavconstructionllc.com/wp-content/uploads/2026/02/tabs-img5.png" alt="Custom home and carriage garage in South Dennis, MA" loading="lazy" />
+              <span>South Dennis</span>
+            </a>
+            <a class="pav-village" href="#consultation">
+              <img src="https://pavconstructionllc.com/wp-content/uploads/2026/03/product6.png" alt="Coastal home in West Dennis, MA" loading="lazy" />
+              <span>West Dennis</span>
+            </a>
+            <a class="pav-village" href="#consultation">
+              <img src="https://pavconstructionllc.com/wp-content/uploads/2026/04/IMG_1732.webp" alt="Custom home in North Dennis, MA" loading="lazy" />
+              <span>North Dennis</span>
+            </a>
+            <a class="pav-village" href="#consultation">
+              <img src="https://pavconstructionllc.com/wp-content/uploads/2026/07/new-bannernm3.jpg" alt="Custom home in Dennisport, MA" loading="lazy" />
+              <span>Dennisport</span>
+            </a>
           </div>
         </div>
       </section>
